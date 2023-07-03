@@ -30,7 +30,6 @@ public class ieee_calc extends AppCompatActivity {
 
         bitValueInputInputText = findViewById(R.id.bitValueInputInputText);
 
-
         bit32Button = findViewById(R.id.bit32Button);
         bit32Button.setOnClickListener(new View.OnClickListener() {
             @Override

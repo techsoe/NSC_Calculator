@@ -6,177 +6,181 @@
     android:layout_height="match_parent"
     tools:context=".bisection_and_falsi">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="5dp"
-            android:gravity="center"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
             >
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Formula: "
-                android:textStyle="bold"
-                android:textSize="15sp"
-                />
-
-            <com.google.android.material.textfield.TextInputLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="5dp"
+                android:gravity="center"
                 >
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/formulaInputText"
-                    android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="input here" />
-            </com.google.android.material.textfield.TextInputLayout>
-        </LinearLayout>
+                    android:text="Formula: "
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="5dp"
-            android:gravity="center"
-            >
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Tolerance/Precision: "
-                android:textStyle="bold"
-                android:textSize="15sp"
-                />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/formulaInputText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="input here" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="40dp">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/toleranceInputText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="input here" />
-            </com.google.android.material.textfield.TextInputLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="5dp"
-            android:gravity="center"
-            >
-
-            <TextView
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Xl: "
-                android:textStyle="bold"
-                android:textSize="15sp"
-                />
+                android:orientation="horizontal"
+                android:layout_margin="5dp"
+                android:gravity="center"
+                >
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="40dp">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/xlInputText"
-                    android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="input here" />
-            </com.google.android.material.textfield.TextInputLayout>
-        </LinearLayout>
+                    android:text="Tolerance/Precision: "
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="5dp"
-            android:gravity="center"
-            >
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-            <TextView
-                android:layout_width="wrap_content"
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/toleranceInputText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="input here" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Xr: "
-                android:textStyle="bold"
-                android:textSize="15sp"
-                />
+                android:orientation="horizontal"
+                android:layout_margin="5dp"
+                android:gravity="center"
+                >
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="40dp">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/xrInputText"
-                    android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="input here" />
-            </com.google.android.material.textfield.TextInputLayout>
-        </LinearLayout>
+                    android:text="Xl: "
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            >
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/xlInputText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="input here" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="5dp"
+                android:gravity="center"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Xr: "
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/xrInputText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="input here" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                >
+
+                <Button
+                    android:id="@+id/bisectionButton"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="Bisection"
+                    android:layout_marginRight="5dp"
+                    />
+
+                <Button
+                    android:id="@+id/falsiButton"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="Falsi"
+                    android:layout_marginLeft="5dp"
+                    />
+
+            </LinearLayout>
 
             <Button
-                android:id="@+id/bisectionButton"
-                android:layout_width="120dp"
+                android:id="@+id/clearButton"
+                android:layout_gravity="center"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
-                android:text="Bisection"
-                android:layout_marginRight="5dp"
+                android:text="CLEAR"
                 />
 
-            <Button
-                android:id="@+id/falsiButton"
-                android:layout_width="120dp"
+            <TextView
+                android:id="@+id/rootFindTxt"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Falsi"
-                android:layout_marginLeft="5dp"
+                android:text=""
+                android:textAlignment="center"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/rootTableTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="13sp"
                 />
 
         </LinearLayout>
 
-        <Button
-            android:id="@+id/clearButton"
-            android:layout_gravity="center"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:text="CLEAR"
-            />
+    </ScrollView>
 
-        <TextView
-            android:id="@+id/rootFindTxt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textAlignment="center"
-            android:textSize="25dp"
-            android:textStyle="bold"
-            />
 
-        <TextView
-            android:id="@+id/rootTableTxt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:textAlignment="center"
-            android:textStyle="bold"
-            />
-
-    </LinearLayout>
 </RelativeLayout>
