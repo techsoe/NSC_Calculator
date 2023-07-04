@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button ieeeButton, rootFindButton;
+    private Button ieeeButton, rootFindButton, jacobiButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +32,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        jacobiButton = findViewById(R.id.jacobiButton);
+        jacobiButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openJacobi();
+            }
+        });
+
     }
 
     public void openIEEE() {
@@ -41,6 +49,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void openRootFinding() {
         Intent intent = new Intent(this, root_finding_calc.class);
+        startActivity(intent);
+    }
+
+    public void openJacobi() {
+        Intent intent = new Intent(this, jacobi.class);
         startActivity(intent);
     }
 

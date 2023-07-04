@@ -18,7 +18,7 @@ import java.util.function.Function;
 
 public class newton_and_secant extends AppCompatActivity {
 
-    private Button newtonButton, secantButton;
+    private Button newtonButton, secantButton, clearButton;
     private TextInputEditText formulaInputText, xaInputText, xbInputText, toleranceInputText;
     private TextView rootFindTxt, rootTableTxt;
 
@@ -38,6 +38,7 @@ public class newton_and_secant extends AppCompatActivity {
         newtonButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                clearButton.setVisibility(View.VISIBLE);
                 double xa = Double.parseDouble(xaInputText.getText().toString());
                 double tolerance = Double.parseDouble(toleranceInputText.getText().toString());
                 String formula = formulaInputText.getText().toString();
@@ -52,6 +53,7 @@ public class newton_and_secant extends AppCompatActivity {
         secantButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                clearButton.setVisibility(View.VISIBLE);
                 String formula = formulaInputText.getText().toString();
                 double xa = Double.parseDouble(xaInputText.getText().toString());
                 double xb = Double.parseDouble(xbInputText.getText().toString());
@@ -62,6 +64,20 @@ public class newton_and_secant extends AppCompatActivity {
 
                 rootFindTxt.setText("Root: " + String.format("%.4f", root));
                 rootTableTxt.setText(iterationTable);
+            }
+        });
+
+        clearButton = findViewById(R.id.clearButton);
+        clearButton.setVisibility(View.GONE);
+        clearButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                formulaInputText.setText("");
+                toleranceInputText.setText("");
+                xaInputText.setText("");
+                xbInputText.setText("");
+                rootTableTxt.setText("");
+                rootFindTxt.setText("");
             }
         });
 
