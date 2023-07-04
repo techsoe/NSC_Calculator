@@ -49,13 +49,31 @@ public class bisection_and_falsi extends AppCompatActivity {
                 rootTableTxt.setText(iterationTable.toString());
             }
         });
+
+        falsiButton = findViewById(R.id.falsiButton);
+        falsiButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                double xl = Double.parseDouble(xlInputText.getText().toString());
+                double xr = Double.parseDouble(xrInputText.getText().toString());
+                double tolerance = Double.parseDouble(toleranceInputText.getText().toString());
+                String formula = formulaInputText.getText().toString();
+                StringBuilder iterationTable = new StringBuilder();
+
+                double root = falsePositionMethod(formula, xl, xr, tolerance, iterationTable);
+                String formattedRoot = String.format("%.4f", root);
+
+                rootFindTxt.setText("Root: " + formattedRoot);
+                rootTableTxt.setText(iterationTable.toString());
+            }
+        });
     }
 
     private double findRoot(double a, double b, double epsilon, String function, StringBuilder iterationTable) {
         int maxIterations = 100; // Maximum number of iterations
         double root = 0;
 
-        iterationTable.append("Iteration\t\tXl\t\t\tXm\t\t\tXr\t\t\tf(Xl)\t\t\tf(Xm)\t\t\tf(Xr)\n");
+        iterationTable.append("i\t\t\tXl\t\t\t\t\t\t\tXm\t\t\t\t\t\t\tXr\t\t\t\t\t\t\tf(Xl)\t\t\t\t\t\t\tf(Xm)\t\t\t\t\t\t\tf(Xr)\n");
 
         for (int i = 0; i < maxIterations; i++) {
             double c = (a + b) / 2; // Midpoint
@@ -72,11 +90,11 @@ public class bisection_and_falsi extends AppCompatActivity {
             String formattedFB = String.format("%.4f", fB);
 
             iterationTable.append(i).append("\t\t\t\t")
-                    .append(formattedA).append("\t\t\t")
-                    .append(formattedC).append("\t\t\t")
-                    .append(formattedB).append("\t\t\t")
-                    .append(formattedFA).append("\t\t\t")
-                    .append(formattedFC).append("\t\t\t")
+                    .append(formattedA).append("\t\t")
+                    .append(formattedC).append("\t\t")
+                    .append(formattedB).append("\t\t")
+                    .append(formattedFA).append("\t\t")
+                    .append(formattedFC).append("\t\t")
                     .append(formattedFB).append("\n");
 
             if (Math.abs(fC) < epsilon) { // Check for convergence
@@ -175,5 +193,40 @@ public class bisection_and_falsi extends AppCompatActivity {
 
         return result;
     }
+
+    private double falsePositionMethod(String function, double a, double b, double epsilon, StringBuilder iterationTable) {
+
+        iterationTable.append("i\t\t\tXl\t\t\t\t\t\t\tXm\t\t\t\t\t\t\tXr\t\t\t\t\t\t\tf(Xl)\t\t\t\t\t\t\tf(Xm)\t\t\t\t\t\t\tf(Xr)\n");
+
+        double fa = evaluateFunction(function, a);
+        double fb = evaluateFunction(function, b);
+        double c = a;
+        int iteration = 1;
+
+        while ((b - a) >= epsilon) {
+            // Find the value of function at point c
+            c = (a * fb - b * fa) / (fb - fa);
+
+            // Evaluate function at xl, xm, and xr
+            double fc = evaluateFunction(function, c);
+            double fA = evaluateFunction(function, a);
+            double fB = evaluateFunction(function, b);
+
+            // Append iteration values to the iterationBuilder
+            iterationTable.append(String.format("%d\t\t %.4f\t\t %.4f\t\t %.4f\t\t %.4f\t\t %.4f\t\t %.4f\n", iteration, a, c, b, fA, fc, fB));
+
+            // Check if the root is found or switch the values
+            if (fc == 0.0)
+                break;
+            else if (fc * fa < 0)
+                b = c;
+            else
+                a = c;
+
+            iteration++;
+        }
+        return c;
+    }
+
 }
 
