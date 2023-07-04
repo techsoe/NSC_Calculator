@@ -35,6 +35,7 @@ public class bisection_and_falsi extends AppCompatActivity {
         bisectionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                clearButton.setVisibility(View.VISIBLE);
                 double xl = Double.parseDouble(xlInputText.getText().toString());
                 double xr = Double.parseDouble(xrInputText.getText().toString());
                 double tolerance = Double.parseDouble(toleranceInputText.getText().toString());
@@ -54,6 +55,7 @@ public class bisection_and_falsi extends AppCompatActivity {
         falsiButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                clearButton.setVisibility(View.VISIBLE);
                 double xl = Double.parseDouble(xlInputText.getText().toString());
                 double xr = Double.parseDouble(xrInputText.getText().toString());
                 double tolerance = Double.parseDouble(toleranceInputText.getText().toString());
@@ -65,6 +67,20 @@ public class bisection_and_falsi extends AppCompatActivity {
 
                 rootFindTxt.setText("Root: " + formattedRoot);
                 rootTableTxt.setText(iterationTable.toString());
+            }
+        });
+
+        clearButton = findViewById(R.id.clearButton);
+        clearButton.setVisibility(View.GONE);
+        clearButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                formulaInputText.setText("");
+                toleranceInputText.setText("");
+                xlInputText.setText("");
+                xrInputText.setText("");
+                rootTableTxt.setText("");
+                rootFindTxt.setText("");
             }
         });
     }
