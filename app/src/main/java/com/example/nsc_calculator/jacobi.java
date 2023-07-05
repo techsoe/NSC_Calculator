@@ -1,7 +1,5 @@
 package com.example.nsc_calculator;
 
-import static com.example.nsc_calculator.jacobi_Method.jacobiMethod;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -40,21 +38,22 @@ public class jacobi extends AppCompatActivity {
         jacobiButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 String funcX = funcXinput.getText().toString();
                 String funcY = funcYinput.getText().toString();
                 String funcZ = funcZinput.getText().toString();
                 double tolerance = Double.parseDouble(toleranceInput.getText().toString());
-                int xoxo = Integer.parseInt(xoInput.getText().toString());
-                int yoyo = Integer.parseInt(yoInput.getText().toString());
-                int zozo = Integer.parseInt(zoInput.getText().toString());
+                double xoxo = Integer.parseInt(xoInput.getText().toString());
+                double yoyo = Integer.parseInt(yoInput.getText().toString());
+                double zozo = Integer.parseInt(zoInput.getText().toString());
 
-
-                double[] solution = jacobiMethod(funcX, funcY, funcZ, tolerance, xoxo, yoyo, zozo);
-                String solutionText = String.format("\nSolution: x=%.3f, y=%.3f, z=%.3f\n", solution[0], solution[1], solution[2]);
-                rootTableTxt.setText(solutionText);
+                jacobi_method.jacobiMethod(funcX, funcY, funcZ, tolerance, xoxo, yoyo, zozo, rootFindTxt, rootTableTxt);
 
             }
         });
 
+
+
     }
+
 }
