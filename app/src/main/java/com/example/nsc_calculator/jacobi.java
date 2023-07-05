@@ -1,6 +1,10 @@
 package com.example.nsc_calculator;
 
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -14,12 +18,21 @@ import java.util.Arrays;
 public class jacobi extends AppCompatActivity {
 
     private TextInputEditText funcXinput, funcYinput, funcZinput, xoInput, yoInput, zoInput, toleranceInput;
-    private Button jacobiButton;
+    private Button jacobiButton, clearButton;
     private TextView rootFindTxt, rootTableTxt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.new_primary_color)));
+            SpannableString title = new SpannableString("NumSum");
+            title.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.white)), 0, title.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+            getSupportActionBar().setTitle(title);
+        }
+
+
         setContentView(R.layout.activity_jacobi);
 
         funcXinput = findViewById(R.id.funcXinput);
@@ -38,7 +51,7 @@ public class jacobi extends AppCompatActivity {
         jacobiButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                clearButton.setVisibility(View.VISIBLE);
                 String funcX = funcXinput.getText().toString();
                 String funcY = funcYinput.getText().toString();
                 String funcZ = funcZinput.getText().toString();
@@ -52,7 +65,22 @@ public class jacobi extends AppCompatActivity {
             }
         });
 
-
+        clearButton = findViewById(R.id.clearButton);
+        clearButton.setVisibility(View.GONE);
+        clearButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                funcXinput.setText("");
+                funcYinput.setText("");
+                funcZinput.setText("");
+                xoInput.setText("");
+                yoInput.setText("");
+                zoInput.setText("");
+                toleranceInput.setText("");
+                rootFindTxt.setText("");
+                rootTableTxt.setText("");
+            }
+        });
 
     }
 

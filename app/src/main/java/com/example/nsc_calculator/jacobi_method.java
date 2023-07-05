@@ -21,7 +21,7 @@ public class jacobi_method {
         int count = 0;
 
         // Implementation of Jacobi Iteration
-        StringBuilder output = new StringBuilder("\nCount\tx\ty\tz\n");
+        StringBuilder output = new StringBuilder("\nCount\t\t\tx\t\t\ty\t\t\tz\n");
 
         boolean condition = true;
 
@@ -29,7 +29,7 @@ public class jacobi_method {
             double x1 = f1.calculate(x0, y0, z0);
             double y1 = f2.calculate(x0, y0, z0);
             double z1 = f3.calculate(x0, y0, z0);
-            output.append(String.format("%d\t%.4f\t%.4f\t%.4f\n", count, x0, y0, z0));
+            output.append(String.format("%d\t\t\t%.4f\t\t\t%.4f\t\t\t%.4f\n", count, x0, y0, z0));
             double e1 = Math.abs(x0 - x1);
             double e2 = Math.abs(y0 - y1);
             double e3 = Math.abs(z0 - z1);

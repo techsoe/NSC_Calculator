@@ -2,7 +2,11 @@ package com.example.nsc_calculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -21,6 +25,15 @@ public class bisection_and_falsi extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.new_primary_color)));
+            SpannableString title = new SpannableString("NumSum");
+            title.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.white)), 0, title.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+            getSupportActionBar().setTitle(title);
+        }
+
+
         setContentView(R.layout.activity_bisection_and_falsi);
 
         rootFindTxt = findViewById(R.id.rootFindTxt);
@@ -89,7 +102,7 @@ public class bisection_and_falsi extends AppCompatActivity {
         int maxIterations = 100; // Maximum number of iterations
         double root = 0;
 
-        iterationTable.append("i\t\t\tXl\t\t\t\t\t\t\tXm\t\t\t\t\t\t\tXr\t\t\t\t\t\t\tf(Xl)\t\t\t\t\t\t\tf(Xm)\t\t\t\t\t\t\tf(Xr)\n");
+        iterationTable.append("i\t\t\tXl\t\t\t\t\tXm\t\t\t\t\tXr\t\t\t\t\tf(Xl)\t\t\tf(Xm)\t\t\tf(Xr)\n");
 
         for (int i = 0; i < maxIterations; i++) {
             double c = (a + b) / 2; // Midpoint
@@ -212,7 +225,7 @@ public class bisection_and_falsi extends AppCompatActivity {
 
     private double falsePositionMethod(String function, double a, double b, double epsilon, StringBuilder iterationTable) {
 
-        iterationTable.append("i\t\t\tXl\t\t\t\t\t\t\tXm\t\t\t\t\t\t\tXr\t\t\t\t\t\t\tf(Xl)\t\t\t\t\t\t\tf(Xm)\t\t\t\t\t\t\tf(Xr)\n");
+        iterationTable.append("i\t\t\tXl\t\t\t\t\tXm\t\t\t\t\tXr\t\t\t\t\tf(Xl)\t\t\tf(Xm)\t\t\tf(Xr)\n");
 
         double fa = evaluateFunction(function, a);
         double fb = evaluateFunction(function, b);

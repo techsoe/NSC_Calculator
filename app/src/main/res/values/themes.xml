@@ -2,8 +2,10 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.NSC_Calculator" parent="Theme.Material3.Light">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/new_onprimary_color</item>
+
     </style>
 
     <style name="Theme.NSC_Calculator" parent="Base.Theme.NSC_Calculator" />
+
 </resources>

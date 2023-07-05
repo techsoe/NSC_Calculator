@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/math_bg"
     tools:context=".jacobi">
 
     <ScrollView
@@ -30,6 +31,7 @@
                     android:text="Formula: "
                     android:textStyle="bold"
                     android:textSize="15sp"
+                    android:textColor="#F86F03"
                     />
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -40,6 +42,7 @@
                         android:id="@+id/funcXinput"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="#F86F03"
                         android:hint="function x" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
@@ -57,6 +60,7 @@
                     android:text="Formula: "
                     android:textStyle="bold"
                     android:textSize="15sp"
+                    android:textColor="#F86F03"
                     />
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -67,6 +71,7 @@
                         android:id="@+id/funcYinput"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="#F86F03"
                         android:hint="function y" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
@@ -84,6 +89,7 @@
                     android:text="Formula: "
                     android:textStyle="bold"
                     android:textSize="15sp"
+                    android:textColor="#F86F03"
                     />
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -94,6 +100,7 @@
                         android:id="@+id/funcZinput"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="#F86F03"
                         android:hint="function z" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
@@ -112,6 +119,7 @@
                     android:text="Xo: "
                     android:textStyle="bold"
                     android:textSize="15sp"
+                    android:textColor="#F86F03"
                     />
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -122,6 +130,7 @@
                         android:id="@+id/xoInput"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="#F86F03"
                         android:hint="input here" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
@@ -139,6 +148,7 @@
                     android:text="Yo: "
                     android:textStyle="bold"
                     android:textSize="15sp"
+                    android:textColor="#F86F03"
                     />
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -149,6 +159,7 @@
                         android:id="@+id/yoInput"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="#F86F03"
                         android:hint="input here" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
@@ -165,6 +176,7 @@
                     android:layout_height="wrap_content"
                     android:text="Zo: "
                     android:textStyle="bold"
+                    android:textColor="#F86F03"
                     android:textSize="15sp"
                     />
 
@@ -176,6 +188,7 @@
                         android:id="@+id/zoInput"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="#F86F03"
                         android:hint="input here" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
@@ -194,6 +207,7 @@
                     android:text="Tolerance: "
                     android:textStyle="bold"
                     android:textSize="15sp"
+                    android:textColor="#F86F03"
                     />
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -204,6 +218,7 @@
                         android:id="@+id/toleranceInput"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="#F86F03"
                         android:hint="input here" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
@@ -215,7 +230,21 @@
                 android:text="Calculate"
                 android:layout_marginRight="5dp"
                 android:layout_gravity="center"
+                android:backgroundTint="#F1C27B"
+                android:textColor="#F86F03"
                 />
+
+            <Button
+                android:id="@+id/clearButton"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="CLEAR"
+                android:layout_marginRight="5dp"
+                android:layout_gravity="center"
+                android:backgroundTint="#F1C27B"
+                android:textColor="#F86F03"
+                />
+
 
             <TextView
                 android:id="@+id/rootFindTxt"
@@ -225,6 +254,8 @@
                 android:textAlignment="center"
                 android:textSize="25dp"
                 android:textStyle="bold"
+                android:textColor="#F86F03"
+                android:layout_margin="5dp"
                 />
 
             <TextView
@@ -232,6 +263,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="13sp"
+                android:textColor="#F86F03"
+                android:layout_margin="5dp"
                 />
 
 

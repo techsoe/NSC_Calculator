@@ -5,16 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/math_bg"
     tools:context=".ieee_calc">
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Numerical And Symbolic Computation \nCalculator"
-        android:textAlignment="center"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -30,6 +22,7 @@
             android:text="Decimal Number: "
             android:textStyle="bold"
             android:textSize="15sp"
+            android:textColor="#F86F03"
             />
 
         <com.google.android.material.textfield.TextInputLayout
@@ -40,6 +33,7 @@
                 android:id="@+id/bitValueInputInputText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="#F86F03"
                 android:hint="input here" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -58,6 +52,8 @@
             android:layout_height="wrap_content"
             android:text="32-bit"
             android:layout_marginRight="5dp"
+            android:backgroundTint="#F1C27B"
+            android:textColor="#F86F03"
             />
 
         <Button
@@ -66,6 +62,8 @@
             android:layout_height="wrap_content"
             android:text="64-bit"
             android:layout_marginLeft="5dp"
+            android:backgroundTint="#F1C27B"
+            android:textColor="#F86F03"
             />
 
     </LinearLayout>
@@ -76,6 +74,8 @@
         android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:text="CLEAR"
+        android:backgroundTint="#F1C27B"
+        android:textColor="#F86F03"
         />
 
     <TextView
@@ -86,6 +86,8 @@
         android:textAlignment="center"
         android:textSize="25dp"
         android:textStyle="bold"
+        android:textColor="#F86F03"
+        android:layout_margin="5dp"
         />
 
     <TextView
@@ -95,6 +97,8 @@
         android:textSize="20sp"
         android:textAlignment="center"
         android:textStyle="bold"
+        android:textColor="#F86F03"
+        android:layout_margin="5dp"
         />
 
 </LinearLayout>
